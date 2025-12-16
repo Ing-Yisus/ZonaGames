@@ -1,0 +1,122 @@
+<!-- Página 1: Inicio de Sesión -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZonaGames - Inicio de Sesión</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0d001a, #260033, #40004d, #730080);
+            background-size: 400% 400%;
+            animation: retroAni2 3s ease infinite;
+            font-family: 'Courier New', monospace;
+            color: white;
+        }
+        @keyframes retroAni2 {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .login-box {
+            width: 350px;
+            padding: 25px;
+            background: #1a1a1a;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 0 10px #00d1ff;
+        }
+        .login-box img {
+            width: 150px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 3px solid #00d1ff;
+        }
+        .login-box input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: none;
+        }
+        .login-box button {
+            width: 95%;
+            padding: 12px;
+            background: #00d1ff;
+            color: black;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .login-box button:hover {
+            background: #00a4cc;
+        }
+        /* ===== RESPONSIVE LOGIN ===== */
+@media (max-width: 768px) {
+    .login-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login-box img {
+        width: 120px;
+    }
+
+    .login-box input,
+    .login-box button {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .login-box {
+        box-shadow: 0 0 6px #00d1ff;
+    }
+
+    .login-box img {
+        width: 100px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+    <img src="logo.jpg" alt="Logo">
+
+    <input type="email" id="correo" placeholder="Email">
+    <input type="password" id="pass" placeholder="Contraseña">
+
+    <button onclick="login()">Iniciar Sesión</button>
+</div>
+
+<script>
+function login() {
+    const correo = document.getElementById("correo").value;
+    const pass = document.getElementById("pass").value;
+
+    const correoCorrecto = "correodeprueba@gmail.com";
+    const passCorrecta = "123";
+
+    if (correo === correoCorrecto && pass === passCorrecta) {
+        location.href = "principal.html";
+    } else {
+        alert("Correo o contraseña incorrectos");
+    }
+}
+</script>
+
+</body>
+</html>
